@@ -1,0 +1,265 @@
+/* General reset for consistent styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styles for light and dark modes */
+body {
+  font-family: 'Times New Roman', Times, serif; /* Changed to Times New Roman */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+  background-color: #f0f0f5;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Main app container for light and dark modes */
+.App {
+  width: 100%;
+  max-width: 550px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  transition: all 0.3s ease;
+}
+
+.App.light {
+  background-color: #ffffff;
+  color: #333;
+}
+
+.App.dark {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+/* Header style with new font and gradient color */
+h1 {
+  text-align: center;
+  font-size: 3rem;
+  font-family: 'Times New Roman', Times, serif; /* Changed to Times New Roman */
+  background: linear-gradient(90deg, #ff6ec7, #8e44ad); /* Gradient color (Pink and Purple) */
+  -webkit-background-clip: text;
+  color: transparent;
+  margin-bottom: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+/* Input field and buttons styling */
+input[type='text'] {
+  width: 100%;
+  padding: 14px 18px;
+  margin-bottom: 15px;
+  border: 2px solid #d1d1d6;
+  border-radius: 8px;
+  font-size: 16px;
+  background-color: #f5f5f5;
+  transition: border-color 0.3s ease-in-out;
+}
+
+input[type='text']:focus {
+  border-color: #8e44ad; /* Change focus color to purple */
+  outline: none;
+}
+
+select {
+  width: 100%;
+  padding: 14px 18px;
+  margin-bottom: 20px;
+  border: 2px solid #d1d1d6;
+  border-radius: 8px;
+  font-size: 16px;
+  background-color: #f5f5f5;
+  color: #333;
+  transition: border-color 0.3s ease-in-out;
+}
+
+select:focus {
+  border-color: #8e44ad; /* Change focus color to purple */
+  outline: none;
+}
+
+button {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  background-color: #8e44ad; /* Use purple as primary button color */
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #732d91; /* Darker purple on hover */
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* Task list styles */
+.task-list {
+  margin-top: 25px;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  margin-bottom: 15px;
+  transition: all 0.3s ease, background-color 0.2s ease;
+}
+
+.todo-item:hover {
+  background-color: #eef2f7; /* Updated to a soft, calming light blue */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.todo-item span {
+  flex: 1;
+  font-size: 16px;
+  color: #333;
+  cursor: pointer;
+  transition: text-decoration 0.3s ease, color 0.3s ease;
+}
+
+.todo-item span.completed {
+  text-decoration: line-through;
+  color: #aaa;
+}
+
+.todo-item button {
+  padding: 6px 12px;
+  background-color: #ff4747; /* Updated to a more vibrant red */
+  color: white;
+  font-size: 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.todo-item button:hover {
+  background-color: #e03e3e; /* Darker red on hover */
+  transform: translateY(-2px);
+}
+
+.todo-item button.edit-btn {
+  background-color: #ff9800; /* Updated to a bright yellow-orange */
+}
+
+.todo-item button.edit-btn:hover {
+  background-color: #fb8c00; /* Darker yellow-orange on hover */
+}
+
+.todo-item button.delete-btn {
+  background-color: #f44336; /* Red button for delete */
+}
+
+.todo-item button.delete-btn:hover {
+  background-color: #e53935; /* Darker red on hover */
+}
+
+/* Dark mode specific styles */
+.App.dark .todo-item {
+  background-color: #333;
+  border-color: #555;
+}
+
+.App.dark .todo-item span {
+  color: #f0f0f0;
+}
+
+.App.dark .todo-item span.completed {
+  color: #aaa;
+}
+
+.App.dark button {
+  background-color: #8e44ad;
+}
+
+.App.dark button:hover {
+  background-color: #732d91;
+}
+
+.App.dark button:active {
+  background-color: #5e2483;
+}
+
+/* Task editing input */
+.edit-input {
+  width: 80%;
+  padding: 10px 15px;
+  margin-right: 10px;
+  border: 2px solid #d1d1d6;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.edit-input:focus {
+  border-color: #8e44ad; /* Updated to purple */
+  outline: none;
+}
+
+/* Dark Mode toggle button */
+.toggle-dark-mode {
+  margin: 15px 0;
+  padding: 12px 25px;
+  background-color: #8e44ad; /* Purple color for dark mode toggle */
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.toggle-dark-mode:hover {
+  background-color: #732d91; /* Darker purple on hover */
+  transform: translateY(-2px);
+}
+
+.toggle-dark-mode:active {
+  transform: translateY(0);
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 600px) {
+  .App {
+    width: 100%;
+    padding: 15px;
+  }
+
+  input[type='text'],
+  select,
+  button {
+    width: 100%;
+  }
+
+  .todo-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .todo-item span {
+    margin-bottom: 10px;
+  }
+}
